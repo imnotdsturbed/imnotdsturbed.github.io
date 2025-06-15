@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  {% include head.html %}
+</head>
+<body class="bg-light">
+
+  {% include header.html %}
+
+  <div class="container my-4">
+    <div class="row">
+      <!-- Conteúdo principal -->
+      <main class="col-md-8">
+        {{ content }}
+      </main>
+
+      <!-- Sidebar -->
+      <aside class="col-md-4">
+        {% include sidebar.html %}
+      </aside>
+    </div>
+  </div>
+
+  {% include footer.html %}
+
+  {% include theme-switcher.html %}
+</body>
+</html>

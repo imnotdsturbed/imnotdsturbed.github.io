@@ -1,0 +1,26 @@
+<div class="p-3 mb-3 bg-body rounded shadow-sm">
+  <h5>Sobre</h5>
+  <p>Descrição breve do blog.</p>
+
+  <h5>Categorias</h5>
+  <ul>
+    {% for category in site.categories %}
+    <li>
+      <a href="{{ '/categories/' | append: category[0] | relative_url }}"
+        >{{ category[0] }} ({{ category[1].size }})</a
+      >
+    </li>
+    {% endfor %}
+  </ul>
+
+  <input
+    type="text"
+    id="search-input"
+    class="form-control"
+    placeholder="Buscar..."
+  />
+  <ul id="search-results" class="list-group mt-2"></ul>
+
+  <h5>Redes</h5>
+  <a href="#">Twitter</a> • <a href="#">GitHub</a>
+</div>

@@ -1,0 +1,17 @@
+{
+  "files.associations": {
+    "*.html": "liquid",
+    "*.json": "liquid",
+    "*.js": "liquid",
+    "*.md": "markdown"
+  },
+  "[liquid]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "sissel.shopify-liquid"
+  },
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "emmet.includeLanguages": {
+    "liquid": "html"
+  }
+}

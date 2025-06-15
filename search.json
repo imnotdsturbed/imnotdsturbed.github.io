@@ -1,0 +1,14 @@
+---
+layout: none
+---
+[
+  {% for post in site.posts %}
+    {
+      "title": "{{ post.title | escape }}",
+      "url": "{{ post.url | relative_url }}",
+      "categories": [{% for cat in post.categories %}"{{ cat }}"{% unless forloop.last %}, {% endunless %}{% endfor %}],
+      "content": {{ post.content | strip_html | jsonify }},
+      "excerpt": {{ post.excerpt | strip_html | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

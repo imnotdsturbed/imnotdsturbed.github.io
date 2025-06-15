@@ -1,0 +1,15 @@
+---
+layout: default
+title: Home
+---
+
+<h1 class="mb-4">Últimos posts</h1>
+
+{% for post in site.posts limit:5 %}
+  <div class="mb-4">
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p class="text-muted">{{ post.date | date: "%d/%m/%Y" }}</p>
+    <p>{{ post.excerpt }}</p>
+    <a href="{{ post.url | relative_url }}" class="btn btn-sm btn-primary">Leia mais</a>
+  </div>
+{% endfor %}
