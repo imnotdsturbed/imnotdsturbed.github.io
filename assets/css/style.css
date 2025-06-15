@@ -1,3 +1,161 @@
-.app {
-  background-color: azure;
+/* 🔵 Tema Metro UI — Flat, sem bordas e sem sombras */
+:root {
+  /* Remove bordas arredondadas */
+  --bs-border-radius: 0;
+  --bs-border-radius-sm: 0;
+  --bs-border-radius-lg: 0;
+  --bs-border-radius-xl: 0;
+  --bs-border-radius-xxl: 0;
+
+  /* Cores básicas (opcional, pode customizar) */
+  --bs-primary: #0078d7;
+  --bs-secondary: #666666;
+  --bs-success: #107c10;
+  --bs-danger: #d13438;
+  --bs-warning: #ffaa44;
+  --bs-info: #018786;
+  --bs-dark: #1f1f1f;
+  --bs-light: #f3f3f3;
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #1f1f1f;
+  --bs-light-rgb: 250, 250, 250;
+  --bs-dark-rgb: 24, 26, 27;
+}
+
+/* 🔸 Remove sombras */
+.btn,
+.card,
+.modal-content,
+.dropdown-menu,
+.navbar,
+.input-group,
+.form-control,
+.alert,
+.list-group-item,
+.toast,
+.popover,
+.tooltip {
+  box-shadow: none !important;
+}
+
+/* 🔸 Remove bordas arredondadas forçadas */
+.btn,
+.form-control,
+.input-group,
+.navbar,
+.dropdown-menu,
+.card,
+.modal-content,
+.alert,
+.list-group-item,
+.toast {
+  border-radius: 0 !important;
+}
+
+/* 🔸 Navbar estilo Metro */
+.navbar {
+  border-bottom: 2px solid var(--bs-dark);
+}
+
+/* 🔸 Botões flat */
+.btn {
+  border-width: 1px;
+  background-image: none;
+}
+
+/* 🔸 Inputs flat */
+.form-control {
+  border-width: 1px;
+}
+
+/* 🔸 Dropdowns flat */
+.dropdown-menu {
+  border: 1px solid var(--bs-dark);
+}
+
+/* 🔸 Cards flat */
+.card {
+  border: 1px solid #ddd;
+}
+
+/* 🔸 Remover hover "inflado" */
+.btn:focus,
+.btn:hover,
+.nav-link:hover,
+.dropdown-item:hover {
+  filter: brightness(95%);
+}
+
+/* 🔸 Tooltip estilo Metro */
+.tooltip-inner {
+  background-color: var(--bs-dark);
+  color: var(--bs-light);
+  border-radius: 0;
+}
+
+/* 🔸 Scrollbar estilo flat (opcional, só em navegadores Chromium) */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--bs-dark) var(--bs-light);
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: var(--bs-light);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--bs-dark);
+}
+
+/* 🔸 Links */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Global */
+
+.cbg {
+  background-color: #131313;
+}
+
+/* Light */
+
+.sidebar {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+/* Dark */
+
+.bg-dark .sidebar {
+  background-color: #131313;
+  border: 0;
+}
+
+.bg-dark .breadcrumb-item {
+  color: rgb(var(--bs-light-rgb), 0.8);
+}
+
+.bg-dark .breadcrumb-item + .breadcrumb-item::before {
+  color: rgb(var(--bs-light-rgb), 0.8);
+}
+
+.bg-dark .text-muted {
+  color: rgba(var(--bs-light-rgb), 0.8) !important;
+}
+
+body.bg-dark .card {
+  background-color: rgb(var(--bs-dark-rgb));
+  color: rgb(var(--bs-light-rgb));
+}
+
+body.bg-dark .card .text-muted {
+  color: rgba(var(--bs-light-rgb), 0.6);
 }

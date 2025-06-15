@@ -6,8 +6,8 @@
     "*.md": "markdown"
   },
   "[liquid]": {
+    "editor.defaultFormatter": "sissel.shopify-liquid",
     "editor.formatOnSave": true,
-    "editor.defaultFormatter": "sissel.shopify-liquid"
   },
   "editor.tabSize": 2,
   "editor.insertSpaces": true,

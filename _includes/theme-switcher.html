@@ -1,6 +1,17 @@
 <script>
   const toggle = document.getElementById('theme-toggle');
   const body = document.body;
+  const icon = document.getElementById('theme-icon');
+
+  function updateIcon(theme) {
+    if (theme === 'dark') {
+      icon.classList.remove('bi-moon');
+      icon.classList.add('bi-sun');
+    } else {
+      icon.classList.remove('bi-sun');
+      icon.classList.add('bi-moon');
+    }
+  }
 
   function setTheme(theme) {
     if (theme === 'dark') {
@@ -11,6 +22,7 @@
       body.classList.add('bg-light');
     }
     localStorage.setItem('theme', theme);
+    updateIcon(theme);
   }
 
   toggle.addEventListener('click', () => {

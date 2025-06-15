@@ -1,46 +1,9 @@
-<footer class="bg-dark text-light py-3 mt-4">
+<footer class="text-light py-3 mt-4 cbg">
   <div class="container text-center">
     <p>&copy; {{ site.time | date: "%Y" }} {{ site.title }}. Todos os direitos reservados.</p>
   </div>
 </footer>
 
 <script>
-  fetch('{{ "/search.json" | relative_url }}')
-    .then(response => response.json())
-    .then(data => {
-      const index = elasticlunr(function () {
-        this.addField('title');
-        this.addField('categories');
-        this.addField('content');
-        this.setRef('url');
-      });
-
-      data.forEach(doc => {
-        index.addDoc(doc);
-      });
-
-      const input = document.getElementById('search-input');
-      const resultsList = document.getElementById('search-results');
-
-      input.addEventListener('input', function () {
-        const query = this.value;
-        const results = index.search(query, {
-          expand: true
-        });
-
-        resultsList.innerHTML = '';
-
-        results.forEach(result => {
-          const item = data.find(d => d.url === result.ref);
-          const li = document.createElement('li');
-          li.classList.add('list-group-item');
-          li.innerHTML = `<a href="${item.url}">${item.title}</a><br><small>Categorias: ${item.categories.join(", ")}</small>`;
-          resultsList.appendChild(li);
-        });
-
-        if (!query) {
-          resultsList.innerHTML = '';
-        }
-      });
-    });
+  const searchJsonUrl = '{{ "/search.json" | relative_url }}';
 </script>
